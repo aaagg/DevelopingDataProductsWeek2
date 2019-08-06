@@ -1,0 +1,32 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+# Developing Data Products-Week 2-Assignment
+
+3rd August 2019
+
+## My First Map
+
+Let's create a map that shows the London Eye. To do that, let's first load the library Leaflet.
+
+```{r echo=TRUE}
+library(leaflet)
+```
+
+Create the map of Paris
+
+```{r echo=TRUE}
+my_map <- leaflet() %>%
+addTiles()
+```
+
+Create a link to the office site of London Eye, which we could get relevant information.
+
+```{r echo=TRUE}
+londoneye <- c("<a href= 'https://www.londoneye.com/' >London Eye</a>")
+leaflet() %>%
+addTiles() %>%
+addMarkers(lat=48.858053, lng=2.294289, popup = londoneye)
+```
